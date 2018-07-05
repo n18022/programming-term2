@@ -1,0 +1,7 @@
+#東京から大阪まで何時間？
+print("速度を入力してください。")
+sokudo = int(input())
+print("距離を入力してください。")
+kyori = float(input())
+jikan = kyori / sokudo
+print("時間は{}時間です。".format(jikan))
