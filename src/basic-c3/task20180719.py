@@ -18,16 +18,24 @@ def _3_(parameter1, parameter2, calculation_method):
 
 print("四則計算のプログラムです。")
 true = True
-# 第1と第2のパラメータに数字が入るまで繰り返す。
+# 第1のパラメータに数字が入るまで繰り返す。
 while True:
     parameter1 = input("第1パラメータを入力してください\n")
     p1True = str.isnumeric(parameter1)
     if p1True != true:
+        print("入力が不正です。")
         continue
+    break
+
+# 第2のパラメータに数字が入るまで繰り返す。
+print("第1パラメータが確定しました。")
+while True:
     parameter2 = input("第2パラメータを入力してください\n")
     p2True = str.isnumeric(parameter2)
     if p2True != true:
+        print("入力が不正です。")
         continue
+    print("第2パラメータが確定しました。")
     parameter1 = float(parameter1)
     parameter2 = float(parameter2)
     break
@@ -38,20 +46,22 @@ while True:
     calculation_method = input("演算方法を入力してください\n")
     if calculation_method == "+":
         add = parameter1 + parameter2
-        print(add)
+        dicision = add
         break
     if calculation_method == "-":
         sub = parameter1 - parameter2
-        print(sub)
+        dicision = sub
         break
     if calculation_method == "*":
         mul = parameter1 * parameter2
-        print(mul)
+        dicision = mul
         break
     if calculation_method == "/":
         div = round((parameter1 / parameter2), 2)
-        print(div)
+        dicision = div
         break
     print("入力が不正です。")
 
+print("計算は{} {} {}で結果は{}です。"
+      .format(parameter1, calculation_method, parameter2, dicision))
 help(_3_)
