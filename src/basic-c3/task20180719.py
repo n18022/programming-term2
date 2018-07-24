@@ -17,28 +17,13 @@ def _3_(parameter1, parameter2, calculation_method):
     """
 
 print("四則計算のプログラムです。")
-true = True
-# 第1のパラメータに数字が入るまで繰り返す。
-while True:
-    parameter1 = input("第1パラメータを入力してください\n")
-    p1True = str.isnumeric(parameter1)
-    if p1True != true:
-        print("入力が不正です。")
-        continue
-    break
-
-# 第2のパラメータに数字が入るまで繰り返す。
+# 第1のパラメータの入力。
+parameter1 = float(input("第1パラメータを入力してください\n"))
 print("第1パラメータが確定しました。")
-while True:
-    parameter2 = input("第2パラメータを入力してください\n")
-    p2True = str.isnumeric(parameter2)
-    if p2True != true:
-        print("入力が不正です。")
-        continue
-    print("第2パラメータが確定しました。")
-    parameter1 = float(parameter1)
-    parameter2 = float(parameter2)
-    break
+
+# 第2のパラメータの入力。
+parameter2 = float(input("第2パラメータを入力してください\n"))
+print("第2パラメータが確定しました。")
 
 # 四則演算のどれかを入力するまで繰り返す
 # 入力後、第1と第2のパラメータを使って計算する。
