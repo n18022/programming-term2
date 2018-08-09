@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
-input_date = 1
-while input_date != 0:
+end = 0
+while True:
     try:
         input_date = input("日付を入力してください。")
         target_date = datetime.strptime(input_date, "%Y/%m/%d")
@@ -8,14 +8,22 @@ while input_date != 0:
 
         if yobi[target_date.weekday()] == "Sat":
             print(f"{input_date}は{yobi[target_date.weekday()]}です。平日ではありません。")
-            print(f"次の平日は{input_date + datetime.timedelta(days=2)}です。")
+            n_weekday = target_date + timedelta(days=2)
+            str_n_weekday = n_weekday.strftime("%Y/%m/%d")
+            print(f"次の平日は{str_n_weekday}です。")
+            end = 1
             break
         elif yobi[target_date.weekday()] == "Sun":
             print(f"{input_date}は{yobi[target_date.weekday()]}です。平日ではありません。")
-            print(f"次の平日は{input_date + datetime.timedelta(days=1)}です。")
+            n_weekday = target_date + timedelta(days=1)
+            str_n_weekday = n_weekday.strftime("%Y/%m/%d")
+            print(f"次の平日は{str_n_weekday}です。")
+            end = 1
             break
         else:
             print(f"{input_date}は{yobi[target_date.weekday()]}です。平日です。")
+            end = 1
             break
     except:
         print("そんな日ないんだけど(笑)\n")
+        if end == 1: break
